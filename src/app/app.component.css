@@ -1,0 +1,16 @@
+.title{
+    margin-left: 5%;
+    font-family: 'Permanent Marker', cursive;
+}
+
+.players {
+    font-family: 'Pacifico', cursive;
+}
+
+p span 
+{
+    display: block;
+}
+.red-tile {
+    background: rgb(5, 238, 102);
+  }
