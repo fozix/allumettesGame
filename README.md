@@ -15,9 +15,9 @@ Run `npm install` pour l'installation des dépendance et après `ng serve` pour 
 
 ## Code de l'application.
 
-L'application est basé sur Angular 7 et Angular Material.
-Un seul composant a été utilisé pour cette application, qui fait appel à une service qui fournie les allumettes de chaque partie, vi un Observable RxJS.
-Le composant et le service ont chacun un test unitaire correspondant.
+- L'application est basé sur Angular 7 et Angular Material.
+- Un seul composant a été utilisé pour cette application, qui fait appel à une service qui fournie les allumettes de chaque partie, via un Observable RxJS.
+- Le composant et le service ont chacun un test unitaire correspondant.
 
 ## Lancement des tests unitaires
 
