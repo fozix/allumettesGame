@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {MatSnackBar} from '@angular/material';
 
+import {AllumettesProviderService} from './services/allumettes-provider.service'
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -14,23 +16,32 @@ export class AppComponent implements OnInit{
   //Tableau d'allumettes.
   matches : Array<number>;
   //A true si le tour de jouer est au joueur 1.
-  playerOneTurn : boolean;
+  playerOneTurn : boolean= true;
   //nombre de victoire joureur 1.
   playerOneVictories : number = 0;
   //nombre de victoire joureur 2.
   playerTwoVictories : number = 0;
 
-  constructor(private snackBar: MatSnackBar) {}
+  constructor(private allumettesProvider : AllumettesProviderService, private snackBar: MatSnackBar) {}
 
   //Initialisation du nombre d'allumettes
   ngOnInit(){
-    this.matchesNumber = this.getRandomInt(10,30);
-    this.matches =  Array(this.matchesNumber).fill(1); 
-    this.playerOneTurn = true;
+    //Le tableau d'allumette est alimenté suite à un observable. (juste pour illustrer le principe)
+    this.allumettesProvider.provideAllumettes().subscribe(
+      allumettes => { 
+        this.matches = allumettes;
+        this.matchesNumber = this.matches.length;
+      },
+      error => {
+        //Pas de traitement particulier.
+        console.log(error);
+      }
+    ); 
   }
 
   //Jouer un tour, vérifier que la partie n'est pas terminé et donner la main au suivant.
   jouerUnTour (isPlayerOne : boolean, event : any){
+    //Extraire le nombre d'allumettes souhaité.
     if(this.matches.length > event.value ){
       this.matches.length = this.matches.length - event.value ;
     }
@@ -51,15 +62,18 @@ export class AppComponent implements OnInit{
         duration: 4000,
       });
       //On relance une nouvelle partie.
-      this.matchesNumber = this.getRandomInt(10,30);
-      this.matches =  Array(this.matchesNumber).fill(1); 
+      this.allumettesProvider.provideAllumettes().subscribe(
+        allumettes => { 
+          this.matches = allumettes;
+          this.matchesNumber = this.matches.length;
+        },
+        error => {
+          //Pas de traitement particulier.
+          console.log(error);
+        }
+      );     
     }
     this.playerOneTurn = !this.playerOneTurn;
   }
-  //Genere un entier aléatoire entre 10 et 30.
-  getRandomInt (min : number , max : number) {
-      min = Math.ceil(min);
-      max = Math.floor(max);
-      return Math.floor(Math.random() * (max - min + 1)) + min;
-  }
+
 }

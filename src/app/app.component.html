@@ -7,13 +7,13 @@
   <mat-card class="players">
       <div>
           <p>Nombre d'allumettes : {{matches.length}}/{{matchesNumber}}</p>
-          <p>Sélectionnez un chiffre, celui qui prend la dernière gagne la partie</p>
+          <p>Sélectionnez un chiffre, celui qui prend la dernière allumette gagne la partie.</p>
       </div>
       <mat-grid-list cols="2" rowHeight="4:1">
           <mat-grid-tile>
             <p>
               <span [ngClass]="{'red-tile' : playerOneTurn}" matBadge="{{playerOneVictories}}" matBadgeOverlap="false">Joueur 1</span>
-              <mat-button-toggle-group  [disabled]="!playerOneTurn" name="user1Select" (change)="jouerUnTour(true,$event)" aria-label="User 1 select">
+              <mat-button-toggle-group  [disabled]="!playerOneTurn" id="user1Select" (change)="jouerUnTour(true,$event)" aria-label="User 1 select">
                   <mat-button-toggle value="1" >1</mat-button-toggle>
                   <mat-button-toggle [disabled]="matches.length < 2" value="2">2</mat-button-toggle>
                   <mat-button-toggle [disabled]="matches.length < 3" value="3">3</mat-button-toggle>
@@ -23,7 +23,7 @@
           <mat-grid-tile>
               <p>
                   <span [ngClass]="{'red-tile' : !playerOneTurn}" matBadge="{{playerTwoVictories}}" matBadgeOverlap="false">Joueur 2</span>
-                  <mat-button-toggle-group [disabled]="playerOneTurn" name="user2Select" (change)="jouerUnTour(false,$event)" aria-label="User 2 select">
+                  <mat-button-toggle-group [disabled]="playerOneTurn" id="user2Select" (change)="jouerUnTour(false,$event)" aria-label="User 2 select">
                       <mat-button-toggle value="1" >1</mat-button-toggle>
                       <mat-button-toggle [disabled]="matches.length < 2" value="2" >2</mat-button-toggle>
                       <mat-button-toggle [disabled]="matches.length < 3" value="3" >3</mat-button-toggle>
