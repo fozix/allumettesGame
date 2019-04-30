@@ -14,7 +14,7 @@ Run `npm install` pour l'installation des dépendance et après `ng serve` pour 
 - Une nouvelle partie est relancée automatiquement à la fin.
 
 ## IHM de l'appplication
-![Alt text](docs/allumettes_ihm.png)
+![Alt text](doc/allumettes_ihm.png)
 
 ## Code de l'application.
 
