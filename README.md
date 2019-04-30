@@ -6,12 +6,15 @@ Run `npm install` pour l'installation des dépendance et après `ng serve` pour 
 
 ## Les règles du jeu
 
-- Ce jeu se joue à deux
-- Les joueurs sont devant un certain nombre d'allumettes, qui peut varier d'une partie à
- une autre entre 10 et 30 allumettes.
-- A chaque tour, il faut en enlever 1, 2 ou 3 allumettes
-- Celui qui prend la dernière gagne la partie
+- Ce jeu se joue à deux.
+- Les joueurs sont devant un certain nombre d'allumettes, qui peut varier d'une partie à une autre entre 10 et 30 allumettes.
+- A chaque tour, il faut en enlever 1, 2 ou 3 allumettes.
+- Celui qui prend la dernière gagne la partie.
 - Le score est mis à jour à la fin de chaque partie.
+- Une nouvelle partie est relancée automatiquement à la fin.
+
+## IHM de l'appplication
+![Alt text](docs/allumettes_ihm.png)
 
 ## Code de l'application.
 
