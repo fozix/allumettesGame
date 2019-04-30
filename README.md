@@ -1,27 +1,24 @@
-# AllumettesGame
-
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.8.
+# Jeu des allumettes
 
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Run `npm install` pour l'installation des dépendance et après `ng serve` pour le démarrage du serveur de développement. Allez à  `http://localhost:4200/` pour accèder au jeu.
 
-## Code scaffolding
+## Les règles du jeu
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- Ce jeu se joue à deux
+- Les joueurs sont devant un certain nombre d'allumettes, qui peut varier d'une partie à
+ une autre entre 10 et 30 allumettes.
+- A chaque tour, il faut en enlever 1, 2 ou 3 allumettes
+- Celui qui prend la dernière gagne la partie
+- Le score est mis à jour à la fin de chaque partie.
 
-## Build
+## Code de l'application.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+L'application est basé sur Angular 7 et Angular Material.
+Un seul composant a été utilisé pour cette application, qui fait appel à une service qui fournie les allumettes de chaque partie, vi un Observable RxJS.
+Le composant et le service ont chacun un test unitaire correspondant.
 
-## Running unit tests
+## Lancement des tests unitaires
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+Avec la commande `ng test`, une fenêtre de votre navigateur doit se lance pour donner les résultat des tests via [Karma](https://karma-runner.github.io).
