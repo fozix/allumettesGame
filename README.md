@@ -1,6 +1,6 @@
 # Jeu des allumettes
 
-## Development server
+## Lancer en développement
 
 Run `npm install` pour l'installation des dépendance et après `ng serve` pour le démarrage du serveur de développement. Allez à  `http://localhost:4200/` pour accèder au jeu.
 
