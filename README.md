@@ -24,4 +24,4 @@ Run `npm install` pour l'installation des dépendance et après `ng serve` pour 
 
 ## Lancement des tests unitaires
 
-Avec la commande `ng test`, une fenêtre de votre navigateur doit se lance pour donner les résultat des tests via [Karma](https://karma-runner.github.io).
+Avec la commande `ng test`, une fenêtre de votre navigateur doit se lancer pour donner les résultat des tests via [Karma](https://karma-runner.github.io).
